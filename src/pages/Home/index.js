@@ -121,8 +121,6 @@ const Page = () => {
           {/* Correction applied : Added a condition to display the last event only if it exists, to avoid an error when the data is not yet loaded         */}
           {last && (
             <EventCard
-              // Added a data-testid attribute to the EventCard component
-              data-testid="last-event-card"
               imageSrc={last?.cover}
               title={last?.title}
               date={new Date(last?.date)}
