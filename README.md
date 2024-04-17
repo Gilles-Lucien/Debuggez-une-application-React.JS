@@ -18,7 +18,7 @@ L'application est le site d'une agence evenementielle.
 
 //////////////
 
-# To do
+# Logs
 
 
 Undefined slide : Fixed
@@ -51,3 +51,8 @@ Miscalenious :
 - Added ids to sections for the navbar buttons anchor to work
 
 fixer les liens du navbar (ancre à corriger)
+
+Test added : 
+- 4 test for Home
+- 1 test for date helper
+- 1 test for Icon
