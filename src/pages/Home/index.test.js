@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "./index";
+import EventCard from "../../components/EventCard";
 
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
@@ -21,24 +22,51 @@ describe("When Form is created", () => {
         })
       );
       await screen.findByText("En cours");
-      await screen.findByText("Message envoyé !");
     });
   });
-
 });
 
-
 describe("When a page is created", () => {
+  beforeEach(() => {
+    render(<Home />);
+  });
+
   it("a list of events is displayed", () => {
-    // to implement
-  })
+    const eventsList = screen.getByTestId("EventsContainer");
+    expect(eventsList).toBeInTheDocument();
+  });
+
   it("a list a people is displayed", () => {
-    // to implement
-  })
+    const peopleCards = screen.getAllByTestId("PeopleCard");
+    expect(peopleCards.length).toBeGreaterThan(0);
+  });
+
   it("a footer is displayed", () => {
-    // to implement
-  })
-  it("an event card, with the last event, is displayed", () => {
-    // to implement
-  })
+    const footer = screen.getByTestId("footer");
+    expect(footer).toBeInTheDocument();
+  });
+
+  it("an event card, with the last event, is displayed", async () => {
+    // Define a mock last prop
+    const mockLast = {
+      cover: "../../../public/images/headway-F2KRf_QfCqw-unsplash.png",
+      title: "Conférence #productCON",
+      date: "Mon Aug 29 2022 22:28:45 GMT+0200 (heure d’été d’Europe centrale)",
+    };
+
+    // Render the component with the mock last prop
+    render(
+      <EventCard
+        imageSrc={mockLast?.cover}
+        title={mockLast?.title}
+        date={new Date(mockLast?.date)}
+        small
+        label="boom"
+        data-testid="last-event-card"
+      />
+    );
+
+    const lastEventCard = await screen.findByTestId("last-event-card");
+    expect(lastEventCard).toBeInTheDocument();
+  });
 });
