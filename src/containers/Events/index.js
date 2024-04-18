@@ -19,6 +19,7 @@ const EventList = () => {
       ? data?.events
       // Correction applied : The filter function only filtered the events by index, and not by the event type. I added the event.type === type condition to filter the events by type
       : data?.events.filter(event => event.type === type)) || []
+
   ).filter((event, index) => {
     if (
       (currentPage - 1) * PER_PAGE <= index &&
@@ -27,13 +28,17 @@ const EventList = () => {
       return true;
     }
     return false;
-  });
+    // Added a sort fonction to sort the events by date
+  }).sort((a, b) => new Date(a.date) - new Date(b.date));;
+
   const changeType = (evtType) => {
     setCurrentPage(1);
     setType(evtType);
   };
   const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE) + 1;
   const typeList = new Set(data?.events.map((event) => event.type));
+
+
 
   return (
     <>
@@ -48,6 +53,7 @@ const EventList = () => {
             onChange={(value) => (value ? changeType(value) : changeType(null))}
           />
           <div id="events" className="ListContainer">
+            
             {filteredEvents.map((event) => (
               <Modal key={event.id} Content={<ModalEvent event={event} />}>
                 {({ setIsOpened }) => (
