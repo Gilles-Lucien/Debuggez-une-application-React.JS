@@ -35,6 +35,9 @@ Correction applied :
 Missing dates : Fixed
 Correction applied : The getMonth method on the Date object returned a zero-based month number, but the MONTHS object was using one-based keys. So, to fix this, I changed the keys in the MONTHS object to be zero-based.
 
+Sorting the events by date : Fixed
+Correction applied : Added a sort fonction to the filtered events
+
 Category filter not working : Fixed
 Correction applied : 
 - Added the props "newValue" to "onChange" in the Select component
