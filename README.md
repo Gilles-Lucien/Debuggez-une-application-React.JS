@@ -51,7 +51,6 @@ Correction applied :
 Miscalenious : 
 - fixed syntax in logo "font-size" vs "fontSize" etc.
 - Not asked in the task, but I added a "cursor:pointer" to the css list items of the Select component for UX improvement.
-- in EventCard, temporary fix to avoid the test failure, but I must investigate why the imageSrc and title are not provided in some cases
 - Added ids to sections for the navbar buttons anchor to work
 
 fixer les liens du navbar (ancre à corriger)
