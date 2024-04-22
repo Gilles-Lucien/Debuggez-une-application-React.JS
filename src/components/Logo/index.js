@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import PropTypes from "prop-types";
 import "./style.scss";
-
+// Correction applied: Syntaxt error for the inline style. Changer "font-family" to "fontFamily", etc.
 const Logo = ({ size }) => (
   <div className="Logo">
     <svg

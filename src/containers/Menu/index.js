@@ -4,6 +4,7 @@ import Logo from "../../components/Logo";
 
 import "./style.scss";
 
+// Correction applied : The ids where missing on the HTML elements, so I added them
 const Menu = () => (
   <nav>
     <Logo />

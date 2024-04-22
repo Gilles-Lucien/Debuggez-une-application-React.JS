@@ -28,7 +28,7 @@ const EventList = () => {
       return true;
     }
     return false;
-    // Added a sort fonction to sort the events by date
+    // Added a sort fonction to sort the events by date in ascending order
   }).sort((a, b) => new Date(a.date) - new Date(b.date));;
 
   const changeType = (evtType) => {

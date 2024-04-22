@@ -17,7 +17,7 @@ export const api = {
   },
 };
 
-// Correction applied : added last state, and sorted the data array by date, after copying it, to get the last event
+// Correction applied : Because the Footer's component EventCard needed a "last" prop, I added last state, and sorted the data array by date, after copying it, to get the last event
 export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
@@ -36,6 +36,7 @@ export const DataProvider = ({ children }) => {
       setError(err);
     }
   }, []);
+  
   useEffect(() => {
     getData();
   }, [getData]);

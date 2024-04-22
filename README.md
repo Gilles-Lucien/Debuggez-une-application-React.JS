@@ -21,8 +21,6 @@ L'application est le site d'une agence evenementielle.
 
 # Logs
 
-
-
 Undefined slide : Fixed
 Correction applied : Array indices are zero-based, so the condition should be index < byDateDesc.length - 1, and not index < byDateDesc.length
 
