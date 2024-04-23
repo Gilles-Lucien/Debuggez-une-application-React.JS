@@ -29,7 +29,7 @@ const EventList = () => {
     }
     return false;
     // Added a sort fonction to sort the events by date in ascending order
-  }).sort((a, b) => new Date(a.date) - new Date(b.date));;
+  }).sort((a, b) => new Date(b.date) - new Date(a.date));;
 
   const changeType = (evtType) => {
     setCurrentPage(1);

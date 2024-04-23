@@ -8,7 +8,7 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
+    new Date(evtB.date) < new Date(evtA.date) ? -1 : 1
   );
 
   // Correction applied : Array indices are zero-based, so the condition should be index < byDateDesc.length - 1, and not index < byDateDesc.length.

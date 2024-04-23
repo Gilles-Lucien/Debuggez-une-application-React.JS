@@ -57,3 +57,6 @@ Test added :
 - 1 test for date helper
 - 1 test for Icon
 
+
+Voir : "useMemo"
+    rechercher extension "swagger viewer" (ctrl+P)
