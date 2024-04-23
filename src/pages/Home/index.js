@@ -118,7 +118,7 @@ const Page = () => {
       <footer className="row" data-testid="footer">
         <div className="col presta">
           <h3>Notre derniére prestation</h3>
-          {/* Correction applied : Added a condition to display the last event only if it exists, to avoid an error when the data is not yet loaded         */}
+          {/* Correction applied : Added a condition to display the last event only if it exists, to avoid an error when the data is not yet loaded  */}
           {last && (
             <EventCard
               imageSrc={last?.cover}
